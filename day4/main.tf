@@ -71,10 +71,11 @@ resource "aws_instance" "ec2" {
   instance_type = var.instance_type
   key_name = var.key_name
   tags = {
-    Name="server007"
+    Name="server0010"
   }
   
   subnet_id = aws_subnet.subnet01.id
- security_groups = [aws_security_group.guard.id]
+ vpc_security_group_ids = [aws_security_group.guard.id]
+#   in above line for calling security gruop in resource block ,tag is modified instead of using security_gruop_id ,new tag is vpc_security_group_ids=[.id]
   # in the above line [] is becoz multiple values are there for role , so always inside sg use []
 }
