@@ -6,7 +6,8 @@ resource "aws_instance" "name01" {
     tags = {
       Name = "tree"
     }
-  
+
+    
 }
 
 resource "aws_instance" "name02" {
