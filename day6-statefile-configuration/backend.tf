@@ -4,7 +4,7 @@
 #  statefile only generate when am running for example instance with apply, destroy cmd 
 #  so here am creating one resource , after terraform apply the resource will take place in remote 
 #  and associated statefile will be generated in local configuration right so after s3 bucket created 
-#  so here i run resource and actions captured in statefile which is inside s3 bucket ,a common terraform- backend syntax below for that 
+#  so here i run a resource and actions captured in statefile which is inside s3 bucket ,a common terraform- backend syntax below for that 
 # resource "aws_" "name" {
   
 # }
