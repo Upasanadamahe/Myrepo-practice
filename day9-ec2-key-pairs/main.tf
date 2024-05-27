@@ -9,10 +9,17 @@ resource "aws_instance" "pairing" {
 resource "aws_key_pair" "pair" {
 
 key_name = "public"
-public_key = file("~/.ssh/id_rsa.pub")
-#  if key is private one so path is diff.  "~/.ssh/id_rsa"
+public_key= file("D:/.ssh/id_rsa.pub")
+
+#  so now after clear with errors proper path is correct in above line
+# public_key = file("../.ssh/id_rsa.pub.") file("../../.ssh/id_rsa.pub")
+
+#  public_key = file("../ssh_keys/id_rsa_id.pub") ../.ssh/id_rsa.pub"
+
+# public_key = file("~/.ssh/id_rsa.pub")  file("D:/path/to/your/public_key.pub")
+#  if key is private one so path is diff.  "~/.ssh/id_rsa" C:\Users\Dell/.ssh/id_rsa.pub.
 #  if u want to give path to ur user data we are using file function ,so in public_key assigning file function 
-# file function are use to call the path of files / content instruction /folder-file actual path to store upload something inside
+# file function are use to call the path of files / contains instruction /folder-file actual path to store upload something inside
 
 }
 
