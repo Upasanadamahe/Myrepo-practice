@@ -1,36 +1,36 @@
-# resource "aws_instance" "yahoo" {
-# ami = "ami-0bb84b8ffd87024d8"
-# instance_type = "t2.micro"
-# key_name = "mykey"
-# tags = {
-#   Name = "yahooo"
-# }
+ resource "aws_instance" "yahoo" {
+ami = "ami-0bb84b8ffd87024d8"
+ instance_type = "t2.micro"
+ key_name = "mykey"
+ tags = {
+   Name = "yahooo"
+ }
   
-# }
+ }
 
-# resource "aws_s3_bucket" "statefile" {
-#   bucket = "statefile001-project--devops"
-#   # acl =""
-# }
+ resource "aws_s3_bucket" "statefile" {
+   bucket = "statefile001-project--devops"
+   # acl =""
+ }
 #  NOTe important :: before deleting bucket first check backend configuration 
 #  after backend , dbtable for backend configuation successfully deleted go to delete the bucket objects 
 # to delete bucket and versions , first delete content inside object then suspend versioning 
 #  delete the bucket 
-# aws_s3_bucket_versioning.version will be created
-  # status     = "Suspended"
+ #aws_s3_bucket_versioning.version will be created
+  # #status     = "Suspended"
 # aws s3 rm s3://statefile001-project--devops --recursive
-# resource "aws_s3_bucket_versioning" "version" {
-#   # bucket = aws_s3_bucket_versioning.version.id
-#    bucket = aws_s3_bucket.statefile.id
+#resource "aws_s3_bucket_versioning" "version" {
+ #bucket = aws_s3_bucket_versioning.version.id
+  #bucket = aws_s3_bucket.statefile.id
 #   versioning_configuration {
 #     # enabled = false
 #     status = "Suspended"
 #     # status = "enable/disable"
 #   }
-# }
+ #}
 #   warning ::this is common backend structure but follow this configure-db-codesfirst01.tf 
 #  this is common structure for dynam-dbtable
-# resource "aws_dynamodb_table" "dynamo" {
+ #resource "aws_dynamodb_table" "dynamo" {
 #   name = "terraform-dynamodb-statefile-01"
 #   hash_key="LockID"
 #   read_capacity =20
@@ -41,8 +41,8 @@
 #   }
 # }
 #  warning ::this is common backend structure but follow this configure-db-codesfirst01.tf 
-# terraform {
-#   backend "s3" {
+ #terraform {
+ #  backend "s3" {
 #     bucket = "statefile001-project--devops"
 #     key = "terraform.tfstate"
 #     region = "us-east-1"
